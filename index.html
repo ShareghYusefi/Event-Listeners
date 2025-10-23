@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Listeners</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+      integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h1>Event Listeners</h1>
+    <p>
+      An event is any action or occurance that happens in the browser triggered
+      by a user.
+    </p>
+    <ul>
+      <li>
+        <button onclick="alert('Button clicked!')">click</button>: A user clicks
+        a button or element
+      </li>
+      <li>
+        <button ondblclick="alert('Double clicked Button!')">
+          double click</button
+        >: A user double clicks a button or element
+      </li>
+      <li>
+        <input type="text" id="username" placeholder="Type something" />submit:
+        A form is submitted
+      </li>
+      <li>input: A user types or changes input value</li>
+      <li>change: A dropdown or checkbox value changes</li>
+    </ul>
+
+    <script>
+      $(document).ready(function () {
+        // grab input element with id of username
+        $("#username").on("input", function (event) {
+          console.log("JQuery event handler called.", event);
+        });
+      });
+
+      // vanilla Javascript
+      var input = document.getElementById("username");
+      input.addEventListener("input", function (event) {
+        console.log("Document event handler called.", event);
+      });
+    </script>
+  </body>
+</html>
